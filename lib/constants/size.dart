@@ -1,0 +1,1 @@
+const double appMinDesktopWidth = 600.0;

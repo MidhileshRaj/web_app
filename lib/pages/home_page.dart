@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:web_app/constants/colors.dart';
 
@@ -13,7 +12,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomColor.scaffoldBg,
+      backgroundColor: CustomColors.ScaffoldBg,
       body: ListView(
         scrollDirection: Axis.vertical,
         children: [
@@ -21,11 +20,11 @@ class _HomePageState extends State<HomePage> {
           Container(
             height: 55,
             width: double.maxFinite,
-            decoration:  BoxDecoration(color: Colors.blueGrey,gradient: LinearGradient(
-              colors: [CustomColor.lightBg1,
+            decoration:  BoxDecoration(color: Colors.blueGrey,gradient: const LinearGradient(
+              colors: [CustomColors.bgLight,
                 Colors.transparent,
                 Colors.transparent,
-                CustomColor.lightBg1
+                CustomColors.bgLight
               ]
             ),borderRadius: BorderRadius.circular(100)),
             child: Row(
@@ -34,7 +33,7 @@ class _HomePageState extends State<HomePage> {
                   "MR.",
                   style: TextStyle(
                       fontSize: 24,
-                      color: CustomColor.secondaryYellow,
+                      color: CustomColors.yellowSecondary,
                       fontStyle: FontStyle.italic,
                       fontWeight: FontWeight.bold),
                 ),

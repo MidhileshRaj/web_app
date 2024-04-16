@@ -4,15 +4,18 @@ import 'package:web_app/pages/home_page.dart';
 void main() {
   runApp(const MyApp());
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+   
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Midhilesh Raj',
+    return  MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(useMaterial3: true),
-      home:const HomePage() ,
+      title: 'MidhileshRaj',
+      home: const HomePage(),
     );
   }
 }
