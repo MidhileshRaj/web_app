@@ -4,37 +4,45 @@ import 'package:web_app/constants/size.dart';
 import 'package:web_app/widgets/drawer_mobile.dart';
 import 'package:web_app/widgets/header_desktop.dart';
 import 'package:web_app/widgets/header_mobile.dart';
+import 'package:web_app/widgets/about_widget_desktop.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class HomePage extends StatelessWidget {
+  HomePage({super.key});
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+    final screenWidth = screenSize.width;
+    final screenHeight = screenSize.height;
     return LayoutBuilder(
       builder: (context, constraints) {
         return Scaffold(
           key: scaffoldKey,
-          endDrawer:constraints.maxWidth>=appMinDesktopWidth?null: const DrawerMobile(),
+          endDrawer: constraints.maxWidth >= appMinDesktopWidth
+              ? null
+              : const DrawerMobile(),
           backgroundColor: CustomColors.ScaffoldBg,
           body: ListView(
             scrollDirection: Axis.vertical,
             children: [
-              // Main part
-              constraints.maxWidth>=600?
-                  const HeaderDesktp():
-                  HeaderMobile(
-                    onLogoTap: () {},
-                    onMenuTap: () {
-                      scaffoldKey.currentState!.openEndDrawer();
-                    },
-                  ),
-              // Skills
+              // TODO: Main part
+              constraints.maxWidth >= appMinDesktopWidth
+                  ? const HeaderDesktp()
+                  : HeaderMobile(
+                      onLogoTap: () {},
+                      onMenuTap: () {
+                        scaffoldKey.currentState!.openEndDrawer();
+                      },
+                    ),
+
+              //TODO : add ABOUT section
+              AboutWidgetDesktop(
+                screenHeight: screenHeight,
+                screenWidth: screenWidth,
+              ),
+              //TODO :  Skills area
               Container(
                 height: 500,
                 width: double.maxFinite,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:web_app/pages/home_page.dart';
+import 'package:web_app/pages/homepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(useMaterial3: true),
       title: 'MidhileshRaj',
-      home: const HomePage(),
+      home: HomePage(),
     );
   }
 }
