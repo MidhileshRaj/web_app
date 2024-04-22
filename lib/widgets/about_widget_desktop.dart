@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:web_app/constants/colors.dart';
 
@@ -24,6 +23,8 @@ class AboutWidgetDesktop extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+
+              // Intro about text
               const Text(
                 "Hey, I'am Midhilesh Raj, \n  Flutter developer",
                 style: TextStyle(
@@ -40,8 +41,13 @@ class AboutWidgetDesktop extends StatelessWidget {
               SizedBox(
                 width: 220,
                 child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: CustomColors.yellowPrimary),
                   onPressed: () {},
-                  child: const Text("Get in touch"),
+                  child: const Text(
+                    "Get in touch",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
             ],

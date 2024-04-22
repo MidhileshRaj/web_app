@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:web_app/constants/colors.dart';
 import 'package:web_app/constants/size.dart';
+import 'package:web_app/constants/skill_items.dart';
+import 'package:web_app/widgets/about_widget_mobile.dart';
 import 'package:web_app/widgets/drawer_mobile.dart';
 import 'package:web_app/widgets/header_desktop.dart';
 import 'package:web_app/widgets/header_mobile.dart';
 import 'package:web_app/widgets/about_widget_desktop.dart';
+import 'package:web_app/widgets/skills_desktop.dart';
+import 'package:web_app/widgets/skills_mobile.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -38,17 +43,23 @@ class HomePage extends StatelessWidget {
                     ),
 
               //TODO : add ABOUT section
-              AboutWidgetDesktop(
-                screenHeight: screenHeight,
-                screenWidth: screenWidth,
-              ),
+              constraints.maxWidth >= appMinDesktopWidth
+                  ? AboutWidgetDesktop(
+                      screenHeight: screenHeight,
+                      screenWidth: screenWidth,
+                    )
+                  : AboutWidgetMobile(
+                      screenHeight: screenHeight * .2,
+                      screenWidth: screenWidth,
+                    ),
+
               //TODO :  Skills area
-              Container(
-                height: 500,
-                width: double.maxFinite,
-                decoration: const BoxDecoration(color: Colors.blueGrey),
-              ),
-              // Project
+              constraints.maxWidth >= appMedDesktopWidth
+                  ? SkiilsDesktop(
+                      screenWidth: screenWidth,
+                    )
+                  : const SkillsMobile(),
+              // TODO : Project area
               Container(
                 height: 500,
                 width: double.maxFinite,

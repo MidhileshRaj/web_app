@@ -5,13 +5,13 @@ const List<String> navItems = [
   "Skills",
   "Experience",
   "Projects",
-  "Contat",
+  "Contact",
 ];
 
 const List<IconData> navIcons =[
   Icons.person,
-  Icons.code,
-  Icons.back_hand,
+  Icons.handyman_outlined,
+  Icons.apps,
   Icons.web,
   Icons.quick_contacts_mail,
 ];
